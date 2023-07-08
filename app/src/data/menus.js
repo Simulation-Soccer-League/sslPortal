@@ -9,7 +9,7 @@ import {
 
 const initMenu = [
   {
-    label: "Dashboard",
+    label: "Test",
     path: "/",
     icon: faTachometer,
   },
@@ -26,7 +26,7 @@ const initMenu = [
     path: "/404",
     icon: faNotdef,
   },
-  
+
   {
     label: 'Tabel dan Form'
   },
