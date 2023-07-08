@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# bGreen Template Reactjs <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fteguhoktian%2Fbgreen-template.git&text=Free%20mobile%20friendly%20Reactjs%20Tailwind%20Template%20on%20Github" target="_blank">![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![bGreen Template](https://github.com/teguhoktian/bgreen-template/blob/master/public/bGreenMockUp.png?raw=true)
 
-## Available Scripts
+### Get Started
 
-In the project directory, you can run:
+- Install NodeJS **LTS** version from <a href="https://nodejs.org/en/">NodeJs Official Page</a>
+- Download the product on this page
+- Unzip the downloaded file to a folder in your computer
+- Open Terminal
+- Go to your file project (where you’ve unzipped the product)
+- (If you are on a linux based terminal) Simply run `npm run install:clean`
+- (If not) Run in terminal `npm install`
+- (If not) Run in terminal `npm run build` for build your project
+- (If not) Run in terminal `npm run dev`
+- Navigate to https://localhost:3000
+- Check more about [Tailwind CSS](https://tailwindcss.com/)
 
-### `npm start`
+### Pages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+There some simple of sample pages that i created on this template.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Here are all the page from the project:
 
-### `npm test`
+- Dashboard
+- Halaman
+  - Blank
+  - 404 Not Found
+- Table dan Form
+  - Table
+  - Form
+- Otentikasi
+  - Login
+  - Register
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Fully Responsive
 
-### `npm run build`
+This template provides Responsive Navigation and Mobile Friendly Feature based on Tailwind CSS and Javascript.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Licensing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Copyright 2023 [Raincode.My.Id](https://raincode.my.id)
+- Licensed under **MIT**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Demo
 
-### `npm run eject`
+Demo: <a href="https://thriving-kataifi-7c5d45.netlify.app/">Demo with Netlify</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Donation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Buy Me some Cofee and Snack with Donate me at [Saweria](https://saweria.co/raincodemyid)
