@@ -1,6 +1,7 @@
 import React from "react";
 import StatisticWidget from "../components/Widget/Statistic.jsx";
 import AchievementWidget from "../components/Widget/Achievment.jsx";
+import PlayerChartWidget from "../components/Widget/playerChart.jsx";
 import DashboardHeader from "../components/Other/DashboardHeader.jsx";
 import ScrolledCard from "../components/Widget/ScrolledCard.jsx";
 import { useOutletContext } from "react-router-dom";
@@ -77,6 +78,7 @@ function Dashboard() {
           <div className="w-full overflow-hidden text-slate-700 md:grid gap-4 grid md:grid-cols-6">
             <StatisticWidget className="col-span-4 col-start-1 bg-white" />
             <AchievementWidget />
+            <PlayerChartWidget />
           </div>
         </div>
 
