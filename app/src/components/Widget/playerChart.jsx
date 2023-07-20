@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import Plot from 'react-plotly.js';
 
 const PlayerChart = () => {
+    const url = `${process.env.REACT_APP_PUBLIC_API_URL}/playerGraph?player=Henrik%20Lind`;
+
     const [visData, setVisData] = useState([]);
 
     useEffect(() => {
         // Fetch data from the API
         const fetchData = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/playerGraph?player=Henrik%20Lind`);
+                const response = await fetch(url);
                 const data = await response.json();
                 setVisData(data);
             } catch (error) {
@@ -17,7 +19,7 @@ const PlayerChart = () => {
         };
 
         fetchData();
-    }, []);
+    }, [url]);
 
     const plotData = [
         {
