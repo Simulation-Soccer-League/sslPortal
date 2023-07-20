@@ -18,11 +18,10 @@ function Achievement() {
         {data ? <pre>{data[0].Name}</pre> : 'Loading...'}
       </div>
       <div className="font-semibold m-auto pt-4">
-        <span className="text-lg lg:text-[80px]">{data ? <pre>{data[0].TPE}</pre> : 'Loading...'}</span>
-        <span className="text-[14px]">TPE</span>
+        <span className="text-xl">{data ? `${data[0].TPE}` : 'Loading...'}</span> TPE
       </div>
-      <p className="text-sm font-semibold">IDR 1.800 M Year to Date</p>
-      <p className="text-xs">21 Mei 23 to GS 2023</p>
+      <p className="text-sm font-semibold">Class: {data ? `${data[0].Class}` : 'Loading...'}</p>
+      <p className="text-xs">Created on: {data ? `${data[0].Created}` : 'Loading...'}</p>
     </div >
   );
 }

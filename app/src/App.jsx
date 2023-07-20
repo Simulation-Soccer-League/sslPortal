@@ -10,6 +10,7 @@ import Blank from "./pages/Blank";
 import NotFound from "./pages/NotFound";
 import Form from "./pages/Form";
 import RegisterIndex from "./pages/auth/Register";
+import "./components/Widget/widget.css";
 
 function App() {
   return (
