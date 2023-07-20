@@ -10,7 +10,7 @@ function Achievement() {
       .then(response => response.json())
       .then(json => setData(json))
       .catch(error => console.error(error));
-  }, []);
+  }, [url]);
 
   return (
     <div className={`widgetCard relative hidden md:flex col-span-2 px-6 py-4 text-center flex-col justify-between ${data[0].Team.replace(/[ .]/g, "")} text-slate-50`} >
