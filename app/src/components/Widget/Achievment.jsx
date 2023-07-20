@@ -13,7 +13,7 @@ function Achievement() {
   }, [url]);
 
   return (
-    <div className={`widgetCard relative hidden md:flex col-span-2 px-6 py-4 text-center flex-col justify-between ${data[0].Team.replace(/[ .]/g, "")} text-slate-50`} >
+    <div className={`widgetCard relative hidden md:flex col-span-2 px-6 py-4 text-center flex-col justify-between ${data ? data[0].Team.replace(/[ .]/g, "") : 'NONE'} text-slate-50`} >
       <div className="font-semibold text-slate-800 bg-white max-w-fit mx-auto pt-5 pb-2 px-6 absolute -top-3 rounded-lg left-1/2 -translate-x-1/2 whitespace-nowrap">
         {data ? <pre>{data[0].Name}</pre> : 'Loading...'}
       </div>
