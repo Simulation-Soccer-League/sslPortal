@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Form from "./pages/Form";
 import RegisterIndex from "./pages/auth/Register";
 import "./components/Widget/widget.css";
+import "./components/Datatables/reactableStyles.css";
 
 function App() {
   return (

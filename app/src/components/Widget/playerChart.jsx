@@ -94,7 +94,7 @@ const PlayerChart = () => {
     };
 
     return (
-        <div>
+        <div className="md:flex m-auto col-span-3">
             {visData.length > 0 ? (
                 <Plot data={plotData} layout={layout} config={config} />
             ) : (
