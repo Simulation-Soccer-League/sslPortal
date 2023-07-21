@@ -1,4 +1,3 @@
-import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
@@ -9,20 +8,20 @@ function RegisterIndex() {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const handleSubmit = () => {
     setError(false);
     console.log(email);
-    console.log(name);
+    console.log(username);
     console.log(password);
     console.log(confirmPassword);
     setLoading(true);
     navigate("/");
   };
   const registerImage =
-    "https://edp.raincode.my.id/static/media/login.cc0578413db10119a7ff.png";
+    "../FA.png";
   return (
     <>
       <div className="flex min-h-screen">
@@ -35,14 +34,6 @@ function RegisterIndex() {
                 alt="Logo"
                 className="md:w-72 w-48 mx-auto"
               />
-              <div className="md:block hidden text-slate-100">
-                <h1 className="font-semibold text-2xl pb-2">
-                  Register an Account
-                </h1>
-                <span className="text-sm">
-                  Free access to EDP Online services
-                </span>
-              </div>
             </div>
           </div>
           {/* Register Section */}
@@ -50,14 +41,14 @@ function RegisterIndex() {
             <div className="loginWrapper flex flex-col w-full lg:px-36 md:px-8 px-8 md:py-8">
               {/* Login Header Text */}
               <div className="hidden md:block font-medium self-center text-xl sm:text-3xl text-gray-800">
-                Buatkan Akun
+                Create an account
               </div>
 
               {/* Sparator */}
               <div className="hidden md:block relative mt-10 h-px bg-gray-300">
                 <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
                   <span className="bg-white px-4 text-xs text-gray-500 uppercase">
-                    Daftarkan akun Anda sekarang, Gratis!
+                    Create your user
                   </span>
                 </div>
               </div>
@@ -82,7 +73,7 @@ function RegisterIndex() {
                         name="email"
                         onChange={(e) => setEmail(e.target.value)}
                         className="text-sm placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full md:py-2 py-3 focus:outline-none focus:border-emerald-400"
-                        placeholder="E-Mail Address"
+                        placeholder="E-Mail"
                       />
                     </div>
                     {error?.email && (
@@ -100,17 +91,17 @@ function RegisterIndex() {
                       </div>
 
                       <input
-                        id="name"
+                        id="username"
                         type="text"
-                        name="name"
-                        onChange={(e) => setName(e.target.value)}
+                        name="username"
+                        onChange={(e) => setUsername(e.target.value)}
                         className="text-sm placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full md:py-2 py-3 focus:outline-none focus:border-emerald-400"
-                        placeholder="Nama Lengkap"
+                        placeholder="Username"
                       />
                     </div>
-                    {error?.name && (
+                    {error?.username && (
                       <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                        {error.email[0]}
+                        {error.username[0]}
                       </span>
                     )}
                   </div>
@@ -151,7 +142,7 @@ function RegisterIndex() {
                         name="confirm_password"
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         className="text-sm placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full md:py-2 py-3 focus:outline-none focus:border-emerald-400"
-                        placeholder="Konfirmasi Password"
+                        placeholder="Confirm Password"
                       />
                     </div>
                     {error?.confirm_password && (
@@ -159,21 +150,6 @@ function RegisterIndex() {
                         {error.confirm_password[0]}
                       </span>
                     )}
-                  </div>
-
-                  {/* Forgot Password Link */}
-                  <div className="flex items-center mb-6 -mt-2 md:-mt-4">
-                    <div className="flex ml-auto">
-                      <Link
-                        to=""
-                        onClick={(e) => {
-                          e.preventDefault();
-                        }}
-                        className="inline-flex font-semibold text-xs sm:text-sm text-emerald-500 hover:text-emerald-700"
-                      >
-                        Lupa password?
-                      </Link>
-                    </div>
                   </div>
 
                   {/* Button Register */}
@@ -191,37 +167,6 @@ function RegisterIndex() {
                 </form>
               </div>
 
-              {/* Sparator */}
-              <div className="relative mt-6 h-px bg-gray-300">
-                <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
-                  <span className="bg-white px-4 text-xs text-gray-500 uppercase">
-                    OR
-                  </span>
-                </div>
-              </div>
-
-              {/* Social Button */}
-              <div className="flex justify-between w-full mt-6">
-                <button
-                  disabled={loading}
-                  type="submit"
-                  className="flex items-center justify-center focus:outline-none text-slate-500 text-sm bg-slate-200 rounded-lg md:rounded md:py-2 px-3 py-3 w-full transition duration-150 ease-in"
-                >
-                  <FontAwesomeIcon icon={faGoogle} />
-                  <span className="mr-2 flex-1">Login with Google</span>
-                </button>
-              </div>
-              <div className="flex justify-between w-full mt-2">
-                <button
-                  disabled={loading}
-                  type="submit"
-                  className="flex items-center justify-center focus:outline-none text-slate-500 text-sm bg-slate-200 rounded-lg md:rounded md:py-2 px-3 py-3 w-full transition duration-150 ease-in"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                  <span className="mr-2 flex-1">Login with Facebook</span>
-                </button>
-              </div>
-              {/* End Social Button */}
 
               {/* Register Link */}
               <div className="flex justify-center items-center my-6 md:mb-0">
@@ -239,17 +184,23 @@ function RegisterIndex() {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
-                      <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                      <path
+                        id="Shape"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9 2C9.55228 2 10 2.44772 10 3V11C10 11.5523 9.55228 12 9 12C8.44772 12 8 11.5523 8 11V3C8 2.44772 8.44772 2 9 2ZM7 12V14C7 15.6569 8.34315 17 10 17H16C17.6569 17 19 15.6569 19 14V12C19 10.3431 17.6569 9 16 9H10C8.34315 9 7 10.3431 7 12ZM3 22C3 22.5523 3.44772 23 4 23H20C20.5523 23 21 22.5523 21 22V18C21 16.8954 20.1046 16 19 16H5C3.89543 16 3 16.8954 3 18V22ZM5 18H19V22H5V18Z"
+                        fill="black"
+                      />
                     </svg>
                   </span>
-                  <span className="ml-2">Sudah punya akun?</span>
+                  <span className="ml-2">Already registered?</span>
                 </Link>
               </div>
               {/* End Register Link */}
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 }

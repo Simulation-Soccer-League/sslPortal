@@ -5,9 +5,13 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function SidebarLogo({ icon, text, ...props }) {
   return (
-    <div className="relative flex flex-row font-semibold text-3xl md:items-center md:mx-auto text-green-700 mb-5 p-4 justify-between">
+    <div className="relative flex flex-row font-semibold text-3xl md:items-center md:mx-auto ssl mb-5 p-4 justify-between">
       <Link to="/">
-        <FontAwesomeIcon icon={icon}></FontAwesomeIcon> {text}
+        <img
+          src={`FA.png`}
+          alt="Logo Login"
+          className="md:w-8 w-48 mx-auto display-block"
+        /> {text}
       </Link>
       <button
         onClick={props.toggle}

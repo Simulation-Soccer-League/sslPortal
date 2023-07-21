@@ -1,5 +1,4 @@
-import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,18 +6,18 @@ import { Link, useNavigate } from "react-router-dom";
 function LoginIndex() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const handleSubmit = () => {
     setError(false);
-    console.log(email);
+    console.log(username);
     console.log(password);
     setLoading(true);
     navigate("/");
   };
   const LoginImage =
-    "https://edp.raincode.my.id/static/media/login.cc0578413db10119a7ff.png";
+    "../FA";
   return (
     <>
       <div className="flex min-h-screen">
@@ -27,7 +26,7 @@ function LoginIndex() {
           <div className="md:bg-emerald-500 md:min-h-screen flex flex-wrap md:w-1/2">
             <div className="items-center text-center flex flex-col relative justify-center mx-auto">
               <img
-                src={LoginImage}
+                src={`${LoginImage}.png`}
                 alt="Logo Login"
                 className="md:w-72 w-48 mx-auto"
               />
@@ -35,9 +34,6 @@ function LoginIndex() {
                 <h1 className="font-semibold text-2xl pb-2">
                   Login to Your Account
                 </h1>
-                <span className="text-sm">
-                  Free access to EDP Online services
-                </span>
               </div>
             </div>
           </div>
@@ -53,7 +49,7 @@ function LoginIndex() {
               <div className="hidden md:block relative mt-10 h-px bg-gray-300">
                 <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
                   <span className="bg-white px-4 text-xs text-gray-500 uppercase">
-                    Login dengan e-mail atau username
+                    Login with your username and password
                   </span>
                 </div>
               </div>
@@ -69,21 +65,21 @@ function LoginIndex() {
                   <div className="flex flex-col mb-3">
                     <div className="relative">
                       <div className="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
-                        <FontAwesomeIcon icon={faEnvelope} />
+                        <FontAwesomeIcon icon={faUser} />
                       </div>
 
                       <input
-                        id="email"
+                        id="username"
                         type="text"
-                        name="email"
-                        onChange={(e) => setEmail(e.target.value)}
+                        name="username"
+                        onChange={(e) => setUsername(e.target.value)}
                         className="text-sm placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full md:py-2 py-3 focus:outline-none focus:border-emerald-400"
-                        placeholder="E-Mail Address"
+                        placeholder="Username"
                       />
                     </div>
-                    {error?.email && (
+                    {error?.username && (
                       <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                        {error.email[0]}
+                        {error.username[0]}
                       </span>
                     )}
                   </div>
@@ -121,7 +117,7 @@ function LoginIndex() {
                         }}
                         className="inline-flex font-semibold text-xs sm:text-sm text-emerald-500 hover:text-emerald-700"
                       >
-                        Lupa password?
+                        Forgot your password?
                       </Link>
                     </div>
                   </div>
@@ -140,38 +136,6 @@ function LoginIndex() {
                   </div>
                 </form>
               </div>
-
-              {/* Sparator */}
-              <div className="relative mt-6 h-px bg-gray-300">
-                <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
-                  <span className="bg-white px-4 text-xs text-gray-500 uppercase">
-                    OR
-                  </span>
-                </div>
-              </div>
-
-              {/* Social Button */}
-              <div className="flex justify-between w-full mt-6">
-                <button
-                  disabled={loading}
-                  type="submit"
-                  className="flex items-center justify-center focus:outline-none text-slate-500 text-sm bg-slate-200 rounded-lg md:rounded md:py-2 px-3 py-3 w-full transition duration-150 ease-in"
-                >
-                  <FontAwesomeIcon icon={faGoogle} />
-                  <span className="mr-2 flex-1">Login with Google</span>
-                </button>
-              </div>
-              <div className="flex justify-between w-full mt-2">
-                <button
-                  disabled={loading}
-                  type="submit"
-                  className="flex items-center justify-center focus:outline-none text-slate-500 text-sm bg-slate-200 rounded-lg md:rounded md:py-2 px-3 py-3 w-full transition duration-150 ease-in"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                  <span className="mr-2 flex-1">Login with Facebook</span>
-                </button>
-              </div>
-              {/* End Social Button */}
 
               {/* Register Link */}
               <div className="flex justify-center items-center  my-6 md:mb-0">
@@ -192,7 +156,7 @@ function LoginIndex() {
                       <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
                     </svg>
                   </span>
-                  <span className="ml-2">Belum punya akun?</span>
+                  <span className="ml-2">Register a new user</span>
                 </Link>
               </div>
               {/* End Register Link */}
