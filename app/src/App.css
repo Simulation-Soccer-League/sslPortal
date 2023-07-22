@@ -44,3 +44,11 @@
     transform: rotate(360deg);
   }
 }
+
+.ssl {
+  color: var(--sslBlue);
+}
+
+.ssl>a {
+  display: flex;
+}

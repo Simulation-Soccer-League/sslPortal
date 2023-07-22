@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 
-function Achievement() {
-  const url = `${process.env.REACT_APP_PUBLIC_API_URL}/getPlayer?username=Canadice`;
-
+function Achievement({ url }) {
   const [data, setData] = useState(null);
 
+
   useEffect(() => {
-    fetch(url)
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => console.error(error));
+    // Fetch data from the API
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
   }, [url]);
 
   return (

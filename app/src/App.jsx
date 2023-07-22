@@ -10,24 +10,28 @@ import Blank from "./pages/Blank";
 import NotFound from "./pages/NotFound";
 import Form from "./pages/Form";
 import RegisterIndex from "./pages/auth/Register";
+import "./App.css";
 import "./components/Widget/widget.css";
 import "./components/Datatables/reactableStyles.css";
+import PlayerPage from "./pages/PlayerPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<AuthLayout />}>
-        <Route path="/" element={<Dashboard />}></Route>
+        <Route path="/" element={<Dashboard playerName="Henrik Lind" />}></Route>
         <Route path="/table" element={<Table />}></Route>
         <Route path="/blank" element={<Blank />}></Route>
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="/form" element={<Form />}></Route>
         <Route path="/profile" element={<Blank />}></Route>
+        <Route path="/player/:playerName" element={<PlayerPage />} />
       </Route>
       <Route path="/auth" element={<GuestLayout />}>
         <Route path="/auth/login" element={<Login />}></Route>
         <Route path="/auth/register" element={<RegisterIndex />}></Route>
       </Route>
+
     </Routes>
   );
 }

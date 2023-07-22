@@ -4,9 +4,11 @@ import AchievementWidget from "../components/Widget/Achievment.jsx";
 import PlayerChartWidget from "../components/Widget/playerChart.jsx";
 import DashboardHeader from "../components/Other/DashboardHeader.jsx";
 import GameDataReactable from "../components/Datatables/gameData.jsx";
-import { useOutletContext } from "react-router-dom";
+import { useParams, useOutletContext } from 'react-router-dom';
 
-function Dashboard(data) {
+function PlayerPage() {
+  const { playerName } = useParams();
+
   const avatar =
     "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
 
@@ -19,7 +21,7 @@ function Dashboard(data) {
         <DashboardHeader
           toggle={sidebarToggle}
           avatar={avatar}
-          user={data.playerName}
+          user={playerName}
         />
 
         {/* Player Information */}
@@ -27,10 +29,10 @@ function Dashboard(data) {
           <div className="w-full overflow-hidden text-slate-700 md:grid grid md:grid-cols-6">
             {/* <StatisticWidget className="col-span-4 col-start-1 bg-white" /> */}
             <AchievementWidget
-              url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayer?player=${data.playerName}`}
+              url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayer?player=${playerName}`}
             />
             <PlayerChartWidget
-              url={`${process.env.REACT_APP_PUBLIC_API_URL}/playerGraph?player=${data.playerName}`}
+              url={`${process.env.REACT_APP_PUBLIC_API_URL}/playerGraph?player=${playerName}`}
             />
           </div>
         </div>
@@ -43,7 +45,7 @@ function Dashboard(data) {
 
           <div className="flex flex-row gap-x-4 overflow-hidden overflow-x-auto justify-between">
             <GameDataReactable
-              url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=${data.playerName}`}
+              url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=${playerName}`}
             />
           </div>
 
@@ -54,4 +56,4 @@ function Dashboard(data) {
   );
 }
 
-export default Dashboard;
+export default PlayerPage;

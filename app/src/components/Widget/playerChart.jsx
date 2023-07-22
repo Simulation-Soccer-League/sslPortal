@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Plot from 'react-plotly.js';
 
-const PlayerChart = () => {
-    const url = `${process.env.REACT_APP_PUBLIC_API_URL}/playerGraph?player=Henrik%20Lind`;
+function PlayerChart({ url }) {
 
     const [visData, setVisData] = useState([]);
 

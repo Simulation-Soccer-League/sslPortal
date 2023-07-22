@@ -1,9 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTable, usePagination, useSortBy, useGlobalFilter } from 'react-table';
 
-const GameDataReactable = () => {
-    const url = `${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=Henrik%20Lind`
-
+function GameDataReactable({ url }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -51,7 +49,7 @@ const GameDataReactable = () => {
                 align: 'center',
                 Cell: ({ value }) => (
                     <div style={{ display: 'inline-block', width: '25px' }}>
-                        <img src={`${value}.png`} style={{ height: '25px' }} alt={value} />
+                        <img src={`../${value}.png`} style={{ height: '25px' }} alt={value} />
                     </div>
                 ),
             },
@@ -67,7 +65,7 @@ const GameDataReactable = () => {
                     } else {
                         return (
                             <div style={{ display: 'inline-block', width: '25px' }}>
-                                <img src={`${value}.png`} style={{ height: '25px' }} alt={value} />
+                                <img src={`../${value}.png`} style={{ height: '25px' }} alt={value} />
                             </div>
                         );
                     }
