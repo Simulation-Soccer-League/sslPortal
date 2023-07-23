@@ -1,19 +1,20 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Dashboard from "./pages/Dashboard";
-import Table from "./pages/Table";
+import "./App.css";
+import "./components/Datatables/reactableStyles.css";
 import AuthLayout from "./components/Layout/AuthLayout";
 import GuestLayout from "./components/Layout/GuestLayout";
-import Login from "./pages/auth/Login";
-import Blank from "./pages/Blank";
-import NotFound from "./pages/NotFound";
-import Form from "./pages/Form";
-import RegisterIndex from "./pages/auth/Register";
-import "./App.css";
+import "./components/Other/Tabs.css";
 import "./components/Widget/widget.css";
-import "./components/Datatables/reactableStyles.css";
-import PlayerPage from "./pages/PlayerPage";
+import Blank from "./pages/Blank";
+import Dashboard from "./pages/Dashboard";
+import Form from "./pages/Form";
+import NotFound from "./pages/NotFound";
+import PlayerPage from "./pages/PlayerPage.jsx";
+import Table from "./pages/Table";
+import Login from "./pages/auth/Login";
+import RegisterIndex from "./pages/auth/Register";
 
 function App() {
   return (

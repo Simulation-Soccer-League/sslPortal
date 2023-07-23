@@ -8,7 +8,7 @@ function SidebarLogo({ icon, text, ...props }) {
     <div className="relative flex flex-row font-semibold text-3xl md:items-center md:mx-auto ssl mb-5 p-4 justify-between">
       <Link to="/">
         <img
-          src={`FA.png`}
+          src={`../FA.png`}
           alt="Logo Login"
           className="md:w-8 w-48 mx-auto display-block"
         /> {text}

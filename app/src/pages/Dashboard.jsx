@@ -3,7 +3,7 @@ import React from "react";
 import AchievementWidget from "../components/Widget/Achievment.jsx";
 import PlayerChartWidget from "../components/Widget/playerChart.jsx";
 import DashboardHeader from "../components/Other/DashboardHeader.jsx";
-import GameDataReactable from "../components/Datatables/gameData.jsx";
+import GameDataReactable from "../components/Datatables/DataGame.jsx";
 import { useOutletContext } from "react-router-dom";
 
 function Dashboard(data) {

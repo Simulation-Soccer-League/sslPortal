@@ -1,10 +1,10 @@
-import { faPage4, faWindows } from "@fortawesome/free-brands-svg-icons";
+// import { faPage4, faWindows } from "@fortawesome/free-brands-svg-icons";
 import {
   faTachometer,
   faTable,
   faLock,
   faNoteSticky,
-  faNotdef
+  // faNotdef
 } from "@fortawesome/free-solid-svg-icons";
 
 const initMenu = [
@@ -13,36 +13,36 @@ const initMenu = [
     path: "/",
     icon: faTachometer,
   },
+  // {
+  //   label: 'Halaman'
+  // },
+  // {
+  //   label: "Blank",
+  //   path: "/blank",
+  //   icon: faPage4,
+  // },
+  // {
+  //   label: "404",
+  //   path: "/404",
+  //   icon: faNotdef,
+  // },
+
   {
-    label: 'Halaman'
+    label: 'Player Pages'
   },
+  // {
+  //   label: "Form",
+  //   path: "/form",
+  //   icon: faWindows,
+  // },
   {
-    label: "Blank",
-    path: "/blank",
-    icon: faPage4,
-  },
-  {
-    label: "404",
-    path: "/404",
-    icon: faNotdef,
-  },
-  
-  {
-    label: 'Tabel dan Form'
-  },
-  {
-    label: "Form",
-    path: "/form",
-    icon: faWindows,
-  },
-  {
-    label: "Tabel",
+    label: "Draft Class Tracker",
     path: "/table",
     icon: faTable,
   },
 
   {
-    label: 'Otentikasi'
+    label: 'Authentication'
   },
   {
     label: "Login",
