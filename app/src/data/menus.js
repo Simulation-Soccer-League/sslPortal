@@ -37,7 +37,7 @@ const initMenu = [
   // },
   {
     label: "Draft Class Tracker",
-    path: "/table",
+    path: "/draftClass",
     icon: faTable,
   },
 

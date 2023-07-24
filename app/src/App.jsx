@@ -21,7 +21,7 @@ function App() {
     <Routes>
       <Route path="/" element={<AuthLayout />}>
         <Route path="/" element={<Dashboard playerName="Henrik Lind" />}></Route>
-        <Route path="/table" element={<Table />}></Route>
+        <Route path="/draftClass" element={<Table />}></Route>
         <Route path="/blank" element={<Blank />}></Route>
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="/form" element={<Form />}></Route>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DraftClassList from "../components/Datatables/DraftClassList";
+import DraftClassList from "../components/Datatables/DataDraftClass";
 
 function UserTable() {
   const [selectedDraftClass, setSelectedDraftClass] = useState('ALL');

@@ -4,7 +4,7 @@ import AchievementWidget from "../components/Widget/Achievment.jsx";
 import PlayerChartWidget from "../components/Widget/playerChart.jsx";
 import DashboardHeader from "../components/Other/DashboardHeader.jsx";
 import GameDataReactable from "../components/Datatables/DataGame.jsx";
-import SeasonDataReactable from "../components/Datatables/DataSeason.jsx";
+import Table from "../components/Datatables/DataSeason.jsx";
 import Tabs from "../components/Other/Tabs.jsx";
 import { useParams, useOutletContext } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ function PlayerPage() {
       />
     },
     {
-      label: 'Season Data', content: <SeasonDataReactable
+      label: 'Season Data', content: <Table
         url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=${playerName}&seasonTotal=TRUE`}
       />
     },

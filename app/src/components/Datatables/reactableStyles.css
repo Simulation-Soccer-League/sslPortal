@@ -24,6 +24,7 @@
     gap: 10px;
     margin: 10px;
     width: 95%;
+    max-width: 700px;
 }
 
 .reactable-settings {
@@ -169,4 +170,8 @@
 .reactable-page-button.reactable-page-button-current {
     background-color: #073c57;
     color: #ffffff;
+}
+
+.reactable a {
+    text-decoration: underline;
 }

@@ -1,134 +1,19 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { useTable, usePagination, useSortBy, useGlobalFilter } from 'react-table';
-import { Link } from 'react-router-dom';
+import React from 'react';
+// import { useTable, usePagination, useSortBy, useGlobalFilter } from 'react-table';
 
-function DraftClassList({ url }) {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        // Fetch data from the API
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                const jsonData = await response.json();
-                setData(jsonData);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-
-        fetchData();
-    }, [url]);
-
-
-    // Specific settings for certain columns
-    const specificColumns = React.useMemo(
-        () => [
-            {
-                Header: 'Name',
-                accessor: 'Name',
-                style: {
-                    minWidth: 175, // Minimum width of the Matchday column
-                    maxWidth: 175, // Fixed width of the Matchday column
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    textAlign: 'left',
-                },
-                align: 'center',
-                Cell: ({ value }) => (
-                    <Link to={`/player/${value}`}>{value}</Link>
-                ),
-            },
-            {
-                Header: 'Username',
-                accessor: 'Username',
-                style: {
-                    minWidth: 150, // Minimum width of the Matchday column
-                    maxWidth: 150, // Fixed width of the Matchday column
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    textAlign: 'left',
-                },
-            },
-            {
-                Header: 'Class',
-                accessor: 'Class'
-            },
-            {
-                Header: 'Team',
-                accessor: 'Team',
-                style: {
-                    minWidth: 150, // Minimum width of the Matchday column
-                    maxWidth: 150, // Fixed width of the Matchday column
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    textAlign: 'left',
-                },
-            },
-            {
-                Header: 'Preferred Position',
-                accessor: 'Preferred Position',
-                style: {
-                    minWidth: 50, // Minimum width of the Matchday column
-                    maxWidth: 50, // Fixed width of the Matchday column
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    textAlign: 'left',
-                },
-            },
-
-            // Add more specific settings for other columns if needed
-        ],
-        []
-    );
-
-    // Dynamically generate columns based on data keys and filter out duplicates and specific columns
-    const dynamicColumns = useMemo(() => {
-        if (data.length === 0) return [];
-
-        const excludedColumns = ['Name'];
-
-        const dynamicKeys = Object.keys(data[0]).filter(
-            (key) => !specificColumns.some((col) => col.accessor === key) && !excludedColumns.includes(key)
-        );
-
-        return dynamicKeys.map((key) => ({ Header: key, accessor: key }));
-    }, [data, specificColumns]);
-
-
-    // Combine dynamic and specific columns into a single memo
-    const columns = useMemo(() => {
-        return [...specificColumns, ...dynamicColumns];
-    }, [specificColumns, dynamicColumns]);
-
-
-    // Create a table instance with sorting and global filter functionality
-    const {
-        getTableProps,
+const ReactableComponent = ({ tableProps, data }) => {
+    const { getTableProps,
         getTableBodyProps,
         headerGroups,
         prepareRow,
         page,
         canNextPage,
         canPreviousPage,
-        state: { pageIndex, pageSize },
+        pageIndex,
+        pageSize,
         gotoPage,
         setGlobalFilter,
-        state,
-    } = useTable(
-        {
-            columns, data, initialState: { pageIndex: 0, pageSize: 10, sortBy: [{ id: 'TPE', desc: true }] },
-            defaultSortBy: [{ id: 'TPE', desc: true }]
-        }, // Set the initial page index and page size
-        useGlobalFilter,
-        useSortBy,
-        usePagination, // Add the usePagination hook
-    );
-
+        state, } = tableProps;
 
     // Apply a row style for every row where Season is odd
     const rowStyle = (row) => {
@@ -320,6 +205,6 @@ function DraftClassList({ url }) {
             </div>
         </div>
     );
-};
+}
 
-export default DraftClassList;
+export default ReactableComponent;

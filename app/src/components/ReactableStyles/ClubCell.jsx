@@ -11,7 +11,7 @@ const ClubCell = ({ value }) => {
 
     if (value.includes(',')) {
         const clubs = value.split(',');
-        return <React.Fragment>{renderClubs(clubs)}</React.Fragment>;
+        return <div style={{ width: '50px' }}><React.Fragment>{renderClubs(clubs)}</React.Fragment></div>;
     } else {
         return (
             <div style={{ display: 'inline-block', width: '25px' }}>
