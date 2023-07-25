@@ -14,6 +14,7 @@
     "bootstrap": "^5.3.0",
     "buffer": "^6.0.3",
     "chart.js": "^4.3.0",
+    "formik": "^2.4.2",
     "framer-motion": "^10.12.12",
     "lodash": "^4.17.21",
     "plotly.js": "^2.24.3",
@@ -30,7 +31,8 @@
     "react-tooltip": "^5.18.1",
     "source-map-explorer": "^2.5.3",
     "stream": "^0.0.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
@@ -59,7 +61,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
   }

@@ -41,7 +41,7 @@
 
 .reactable-table-container {
     overflow-x: auto;
-    width: 100%;
+    /* width: 100%; */
     /* Limit the width of the table-container */
 }
 

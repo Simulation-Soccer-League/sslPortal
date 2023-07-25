@@ -2,6 +2,8 @@
 :root {
   --sslBlue: #070B51;
   --sslGold: #BD9523;
+  --sslFont: "Roboto", sans-serif;
+  --fontColor: #000;
 }
 
 
@@ -51,4 +53,13 @@
 
 .ssl>a {
   display: flex;
+}
+
+h1 {
+  font-family: var(--sslFont);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--fontColor);
+  margin: auto;
+  text-align: center;
 }

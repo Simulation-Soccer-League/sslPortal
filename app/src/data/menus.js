@@ -4,6 +4,8 @@ import {
   faTable,
   faLock,
   faNoteSticky,
+  faFutbol,
+  faRankingStar,
   // faNotdef
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,19 +15,19 @@ const initMenu = [
     path: "/",
     icon: faTachometer,
   },
-  // {
-  //   label: 'Halaman'
-  // },
-  // {
-  //   label: "Blank",
-  //   path: "/blank",
-  //   icon: faPage4,
-  // },
-  // {
-  //   label: "404",
-  //   path: "/404",
-  //   icon: faNotdef,
-  // },
+  {
+    label: 'Index'
+  },
+  {
+    label: "Standings",
+    path: "/standings",
+    icon: faRankingStar,
+  },
+  {
+    label: "Statistics",
+    path: "/statistics",
+    icon: faFutbol,
+  },
 
   {
     label: 'Player Pages'
@@ -41,19 +43,19 @@ const initMenu = [
     icon: faTable,
   },
 
-  {
-    label: 'Authentication'
-  },
-  {
-    label: "Login",
-    path: "/auth/login",
-    icon: faLock,
-  },
-  {
-    label: "Register",
-    path: "/auth/register",
-    icon: faNoteSticky,
-  },
+  // {
+  //   label: 'Authentication'
+  // },
+  // {
+  //   label: "Login",
+  //   path: "/auth/login",
+  //   icon: faLock,
+  // },
+  // {
+  //   label: "Register",
+  //   path: "/auth/register",
+  //   icon: faNoteSticky,
+  // },
 ];
 
 export default initMenu
