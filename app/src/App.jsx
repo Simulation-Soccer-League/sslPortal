@@ -10,7 +10,7 @@ import "./components/Widget/widget.css";
 import Standings from "./pages/Standings";
 import Dashboard from "./pages/Dashboard";
 import Form from "./pages/Form";
-import NotFound from "./pages/NotFound";
+import Statistics from "./pages/Statistics";
 import PlayerPage from "./pages/PlayerPage.jsx";
 import Table from "./pages/Table";
 import Login from "./pages/auth/Login";
@@ -28,7 +28,7 @@ function App() {
         <Route path="/" element={<Dashboard playerName="Henrik Lind" />}></Route>
         <Route path="/draftClass" element={<Table />}></Route>
         <Route path="/standings" element={<Standings />}></Route>
-        <Route path="/404" element={<NotFound />}></Route>
+        <Route path="/statistics" element={<Statistics />}></Route>
         <Route path="/form" element={<Form />}></Route>
         {/* <Route path="/profile" element={<Profile />}></Route> */}
         <Route path="/player/:playerName" element={<PlayerPage />} />

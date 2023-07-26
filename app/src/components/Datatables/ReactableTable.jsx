@@ -123,11 +123,21 @@ const ReactableComponent = ({ tableProps, data }) => {
                     <thead>
                         {headerGroups.map((headerGroup) => (
                             <tr {...headerGroup.getHeaderGroupProps()} className="reactable-header">
-                                {headerGroup.headers.map((column) => (
+                                {headerGroup.headers.map((column, columnIndex) => (
                                     <th
+                                        key={columnIndex}
                                         {...column.getHeaderProps(column.getSortByToggleProps())}
                                         className="reactable-header"
-                                        style={{ padding: '8px', borderBottom: '1px solid #ccc', cursor: 'pointer' }}
+                                        style={{
+                                            // Add custom styles to freeze the first column (change the index accordingly)
+                                            position: columnIndex === 0 ? 'sticky' : 'static',
+                                            left: columnIndex === 0 ? 0 : 'auto',
+                                            zIndex: columnIndex === 0 ? 1 : 'auto',
+                                            padding: '8px',
+                                            borderBottom: '1px solid #ccc',
+                                            cursor: 'pointer'
+                                            // Add any other custom styles for the header cell
+                                        }}
                                     >
                                         {column.render('Header')}
                                         {/* Add sorting icons */}
