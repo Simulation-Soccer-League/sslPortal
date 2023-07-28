@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import "./components/Datatables/reactableStyles.css";
+import "./components/Attributes/AttributeStyles.css";
 import AuthLayout from "./components/Layout/AuthLayout";
 import GuestLayout from "./components/Layout/GuestLayout";
 import "./components/Other/Tabs.css";

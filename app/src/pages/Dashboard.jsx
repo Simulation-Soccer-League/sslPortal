@@ -5,12 +5,29 @@ import PlayerChartWidget from "../components/Widget/playerChart.jsx";
 import DashboardHeader from "../components/Other/DashboardHeader.jsx";
 import GameDataReactable from "../components/Datatables/DataGame.jsx";
 import { useOutletContext } from "react-router-dom";
+import Tabs from "../components/Other/Tabs.jsx";
+import AttributePage from "../components/Attributes/AttributePage.jsx";
 
 function Dashboard(data) {
   const avatar =
     "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
 
   const [sidebarToggle] = useOutletContext();
+
+  const tabs = [
+    {
+      label: 'Game Log', content: <GameDataReactable
+        url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=${data.playerName}`}
+      />
+    },
+    {
+      label: 'Player Build', content: <AttributePage
+        url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayer?player=${data.playerName}`}
+      />
+    },
+    // { label: 'Tab 3', content: 'This is the content of Tab 3.' },
+  ];
+
 
   return (
     <>
@@ -35,20 +52,7 @@ function Dashboard(data) {
           </div>
         </div>
 
-        {/* OS Kredit */}
-        <div className="px-2 mx-auto mainCard">
-          <h1 className="text-slate-500 pb-3 text-base md:text-lg">
-            Game Log
-          </h1>
-
-          <div className="flex flex-row gap-x-4 overflow-hidden overflow-x-auto justify-between">
-            <GameDataReactable
-              url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=${data.playerName}`}
-            />
-          </div>
-
-          <div className="lg:w-full w-[1024px] overflow-hidden flex flex-row justify-between text-slate-700 gap-2 lg:max-h-screen overflow-x-auto whitespace-nowrap"></div>
-        </div>
+        <Tabs tabs={tabs} />
       </main>
     </>
   );
