@@ -7,7 +7,6 @@ import GameDataReactable from "../components/Datatables/DataGame.jsx";
 import SeasonDataReactable from "../components/Datatables/DataSeason.jsx";
 import Tabs from "../components/Other/Tabs.jsx";
 import { useParams, useOutletContext } from 'react-router-dom';
-import AttributePage from "../components/Attributes/AttributePage.jsx";
 
 function PlayerPage() {
   const { playerName } = useParams();
@@ -26,11 +25,6 @@ function PlayerPage() {
     {
       label: 'Season Data', content: <SeasonDataReactable
         url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayerStatistics?player=${playerName}&seasonTotal=TRUE`}
-      />
-    },
-    {
-      label: 'Player Build', content: <AttributePage
-        url={`${process.env.REACT_APP_PUBLIC_API_URL}/getPlayer?player=${playerName}`}
       />
     },
     // { label: 'Tab 3', content: 'This is the content of Tab 3.' },
